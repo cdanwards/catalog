@@ -1,0 +1,9 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  {% for course in courses %}
+    <div class="col-md-6 col-md-offset-1">
+        <h3><a href="{% url 'course_detail' pk=course.pk %}">{{ course.title }}</h3></a>
+    </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'}">
+  </head>
+  <body>
+    <div class="page-header container">
+      <h1 class="col-md-4"><a href="/" class="top-menu nounderline">Course Catalog</a></h1>
+      <div class="col-md-4">
+        <a href="{% url 'course_new' %}" class="top-menu nounderline">
+          <h1>Add Course
+            <small><span class="glyphicon glyphicon-plus"></span></small>
+          </h1>
+        </a>
+      </div>
+    </div>
+    <div class="content container">
+      <div class = "row">
+        <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

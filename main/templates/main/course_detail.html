@@ -1,13 +1,28 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-  <div class="course">
-    <h1  class = "course-template-title">{{ course.title }}</h1>
-    <p class = "course-template-bullet">{{ course.description|linebreaks}}</p>
-    <p class = "course-template-bullet">{{ course.instructor }}</p>
-    <p class = "course-template-bullet">{{ course.course_length}} weeks</p>
-
-    <img src="{{ MEDIA_URL }}{{ course.art }}" alt="course-art">
-    <a class="btn btn-default" href="{% url 'course_edit' pk=course.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+  <div class="row">
+    <div class="col-sm-12">
+      <h1  class = "course-template-title">{{ course.title }}</h1>
+    </div>
+    <div class="col-sm-6">
+      <img src="{{ MEDIA_URL }}{{ course.art }}" alt="">
+      <h2> Description: </h2>
+      <p class = "course-template-bullet">{{ course.description }}</p>
+    </div>
+    <div class="col-sm-6">
+      <h4>Instructor:</h4>
+      <ul>
+        <li class = "course-template-bullet">{{ course.instructor }}</li>
+      </ul>
+      <h4>Course Length:</h4>
+      <ul>
+        <li class = "course-template-bullet">{{ course.course_length}} weeks</li>
+      </ul>
+    </div>
+    <a href="{% url 'course_edit' pk=course.pk %}" class="col-sm-1 col-sm-offset-3" style="margin: 20px;">
+      <span class="glyphicon glyphicon-pencil edit-span">
+      </span>
+    </a>
   </div>
 {% endblock content %}

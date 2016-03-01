@@ -3,7 +3,12 @@
 {% block content %}
   <h1>New Course</h1>
   <form method="POST" class="post-form"  enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
+    {{ form.errors }}
+    <h5>Course Title: {{ form.title }}</h5>
+    <h5>Course Description: {{ form.description }}</h5>
+    <h5>Instructor: {{ form.instructor }}</h5>
+    <h5>Course Duration: {{ form.course_length }}</h5>
+    <h5>Image: {{ form.art }}</h5>
     <button type="submit" class="save btn btn-default">Save</button>
 
   </form>

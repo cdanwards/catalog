@@ -2,11 +2,12 @@
 
 {% block content %}
   <div class="course">
-    <h1>{{ course.title }}</h1>
-    <p>{{ course.description|linebreaks}}</p>
-    <p>{{ course.instructor }}</p>
-    <p>{{ course.course_length}} weeks</p>
-    <img src="{{ course.art }}" alt="course-art">
+    <h1  class = "course-template-title">{{ course.title }}</h1>
+    <p class = "course-template-bullet">{{ course.description|linebreaks}}</p>
+    <p class = "course-template-bullet">{{ course.instructor }}</p>
+    <p class = "course-template-bullet">{{ course.course_length}} weeks</p>
+
+    <img src="{{ MEDIA_URL }}{{ course.art }}" alt="course-art">
     <a class="btn btn-default" href="{% url 'course_edit' pk=course.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
   </div>
 {% endblock content %}

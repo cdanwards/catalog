@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -121,8 +122,21 @@ USE_TZ = True
 
 
 #### MEDIA urls
-MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        #'toolbar': 'Basic',
+        'toolbar': 'Full',
+    },
+}
+
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -132,5 +146,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PUBLIC_DIR, 'static')
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = (
-  os.path.join(PROJECT_DIR, 'static'),
+  os.path.join(BASE_DIR, 'static'),
 )

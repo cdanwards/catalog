@@ -13,4 +13,4 @@ class Course(models.Model):
     description = models.CharField(max_length = 300)
     instructor = models.CharField(max_length = 100)
     course_length = models.CharField(max_length=30, choices=DURATION, default=DURATION[0][0])
-    art = models.FileField(upload_to='documents/%Y/%m/%d')
+    art = models.ImageField(upload_to='uploads/')

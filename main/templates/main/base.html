@@ -1,15 +1,16 @@
-{% load staticfiles %}
+{% load static %}
+
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
   </head>
   <body>
     <div class="page-header container">
-      <h1 class="col-md-4"><a href="/" class="top-menu nounderline">Course Catalog</a></h1>
+      <h1 class="col-md-4"><a href="/" class="top-menu top-header">Course Catalog</a></h1>
       <div class="col-md-4">
-        <a href="{% url 'course_new' %}" class="top-menu nounderline">
+        <a href="{% url 'course_new' %}" class="top-menu top-header">
           <h1>Add Course
             <small><span class="glyphicon glyphicon-plus"></span></small>
           </h1>
